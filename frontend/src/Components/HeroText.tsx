@@ -1,4 +1,3 @@
-import React from 'react';
 import '../Components/HeroText.scss'
 import { TestimonialData } from '../assets/asset';
 import { useNavigate } from 'react-router-dom';

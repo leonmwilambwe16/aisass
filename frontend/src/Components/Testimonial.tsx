@@ -1,4 +1,3 @@
-import React from 'react';
 import '../Components/Testimonial.scss';
 import { TestimonialData } from '../assets/asset';
 import { FaStar } from "react-icons/fa";

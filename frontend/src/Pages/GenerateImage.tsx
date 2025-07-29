@@ -15,7 +15,7 @@ const ImageStyle = [
 const GenerateImage = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('Realistic style');
   const [input, setInput] = useState<string>('');
-  const [publish, setPublish] = useState<boolean>(false);
+
 
   const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

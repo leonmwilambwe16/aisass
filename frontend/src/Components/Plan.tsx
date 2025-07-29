@@ -1,4 +1,3 @@
-import React from 'react'
 import '../Components/Plan.scss'
 import {PricingTable} from '@clerk/clerk-react'
 

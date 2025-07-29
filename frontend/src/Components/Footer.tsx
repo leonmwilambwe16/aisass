@@ -1,4 +1,3 @@
-import React from 'react';
 import '../Components/Footer.scss';
 import { FaBraille } from "react-icons/fa";
 

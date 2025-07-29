@@ -1,4 +1,4 @@
-// imports
+
 import JohnImg from '../assets/profileimage2.jpg';
 import SarahImg from '../assets/profileimage1.jpg';
 import AliImg from '../assets/profileimage3.jpg';
@@ -12,11 +12,11 @@ import icon5 from '../assets/icone5.png'
 import icon6 from '../assets/icone6.png'
 
 
-// Type definitions
+
 export interface AiTool {
   title: string;
   description: string;
-  icon: IconType; // ✅ Correct type for a component
+  icon: string; 
   bg: { from: string; to: string };
   path: string;
 }
@@ -38,7 +38,7 @@ export interface Creation {
    content?: string;
 }
 
-// AiToolsData
+
 export const AiToolsData: AiTool[] = [
   {
     title: 'AI Article Writer',
@@ -84,7 +84,7 @@ export const AiToolsData: AiTool[] = [
   },
 ];
 
-// TestimonialData
+
 export const TestimonialData: Testimonial[] = [
   {
     image: JohnImg,
@@ -123,7 +123,7 @@ export const TestimonialData: Testimonial[] = [
   },
 ];
 
-// CreationData
+
 export const CreationData: Creation[] = [
   {
     id: 1,
@@ -147,7 +147,7 @@ export const CreationData: Creation[] = [
     prompt: 'Create an image of a futuristic city with flying cars.',
     type: 'Image',
     createdAt: '2025-07-16',
-    content: 'https://via.placeholder.com/300x200.png?text=Futuristic+City', // Replace with actual image path
+    content: 'https://via.placeholder.com/300x200.png?text=Futuristic+City', 
   },
   {
     id: 4,
@@ -155,7 +155,7 @@ export const CreationData: Creation[] = [
     prompt: 'Remove background from a photo of a person in a crowded street.',
     type: 'Background Removal',
     createdAt: '2025-07-15',
-    content: 'https://via.placeholder.com/300x200.png?text=Background+Removed', // Placeholder
+    content: 'https://via.placeholder.com/300x200.png?text=Background+Removed', 
   },
   {
     id: 5,

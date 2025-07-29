@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import './Layout.scss';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { FaBraille } from "react-icons/fa";
@@ -19,7 +19,7 @@ const Layout = () => {
           <p>AiChamp</p>
         </span>
 
-        {/* Render hamburger or close icon based on sidebar state */}
+   
         {sidebar ? (
           <X onClick={() => setSidebar(false)} className="lucide-close" />
         ) : (

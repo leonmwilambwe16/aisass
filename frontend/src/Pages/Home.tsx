@@ -1,4 +1,3 @@
-import React from 'react';
 import '../Pages/Home.scss'
 import Navbar from '../Components/Navbar';
 import HeroText from '../Components/HeroText';

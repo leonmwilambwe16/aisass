@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import './Dashboard.scss';
 import { CreationData } from '../assets/asset';
 import { Gem, Sparkle } from 'lucide-react';

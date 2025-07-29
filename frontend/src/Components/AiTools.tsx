@@ -1,4 +1,3 @@
-import React from 'react';
 import '../Components/AiTools.scss'
 import { AiToolsData } from '../assets/asset';
 import { useNavigate } from 'react-router-dom';
