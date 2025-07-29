@@ -51,7 +51,7 @@ const WriteArticle = () => {
       if (data.success) {
         setContent(data.content);
       } else {
-        toast.error(data.message || 'Failed to generate article.');
+        toast.error(data.message || 'Failed to generate articles.');
       }
     } catch (error) {
       if (axios.isAxiosError(error) && error.response) {
