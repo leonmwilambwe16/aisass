@@ -1,0 +1,118 @@
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  padding: 17px 20px;
+  gap: 20px;
+  border-bottom: rgb(196, 196, 196);
+
+  .box-icons {
+    display: flex;
+    flex-direction: column;
+
+    .icons-footer {
+      span {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 10px;
+        color: #3a06ca;
+        font-weight: 700;
+      }
+    }
+
+    .text-footer {
+      margin-top: 10px;
+      font-size: 13px;
+      color: rgb(56, 56, 56);
+    }
+  }
+
+  .menu-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+
+    .list-menu {
+      h4 {
+        margin-bottom: 10px;
+      }
+
+      .list-menu-footer {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        color: rgb(56, 56, 56);
+
+        li {
+          cursor: pointer;
+
+          &:hover {
+            color: #3a06ca;
+            transition: 0.5s;
+          }
+        }
+      }
+    }
+
+    .subscribes-footer {
+      display: flex;
+      flex-direction: column;
+      margin-top: 15px;
+      line-height: 20px;
+
+      form {
+        display: flex;
+        gap: 3px;
+
+        input {
+          padding: 7px 13px;
+          border: 1px solid rgb(175, 174, 174);
+          background-color: transparent;
+          border-radius: 7px;
+          outline: none;
+        }
+
+        button {
+          padding: 6px 13px;
+          border-radius: 7px;
+          outline: none;
+          border: none;
+          background-color: #3a06ca;
+          color: white;
+          cursor: pointer;
+
+          &:hover {
+            background-color: rgb(119, 119, 119);
+            transition: 0.5s;
+          }
+        }
+      }
+
+      p {
+        color: rgb(56, 56, 56);
+        font-size: 13px;
+      }
+    }
+  }
+
+  .footer-bottom {
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+
+    p {
+      color: #888;
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .menu-footer {
+      flex-direction: column;
+    }
+  }
+}

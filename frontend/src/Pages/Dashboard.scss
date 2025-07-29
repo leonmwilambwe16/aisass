@@ -1,0 +1,42 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+  gap: 15px;
+
+  .board-first {
+    display: flex;
+    gap: 10px;
+
+    .total-andall {
+      .total-cart-blox {
+        display: flex;
+        justify-content: space-between;
+        width: 20rem;
+        height: 5rem;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 10px 12px;
+        background: radial-gradient(
+          circle,
+          rgba(242, 220, 231, 1) 0%,
+          rgba(235, 235, 245, 1) 100%
+        );
+
+        .box-car-simple {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .board-first {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
