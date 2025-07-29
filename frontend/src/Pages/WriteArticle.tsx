@@ -11,7 +11,7 @@ type ArticleLength = {
   label: string;
 };
 
-axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
+
 
 const articleLengths: ArticleLength[] = [
   { wordCount: 800, label: 'Short (500–800 wds)' },
@@ -37,13 +37,18 @@ const WriteArticle = () => {
 
     try {
       setLoading(true);
+      const token = await getToken();
+      console.log('Clerk Token:', token); 
+
       const prompt = `Write an article about ${input} in ${selected.label}`;
+      
       const { data } = await axios.post(
-        '/api/ai/generate-article',
+        'https://aichampiondechampion.onrender.com/api/ai/generate-article', 
         { prompt, length: selectedLength },
         {
           headers: {
-            Authorization: `Bearer ${await getToken()}`,
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
           },
         }
       );
@@ -51,13 +56,13 @@ const WriteArticle = () => {
       if (data.success) {
         setContent(data.content);
       } else {
-        toast.error(data.message || 'Failed to generate articles.');
+        toast.error(data.message || 'Failed to generate article.');
       }
     } catch (error) {
-      if (axios.isAxiosError(error) && error.response) {
-        toast.error(error.response.data.message || 'Something went wrong');
+      if (axios.isAxiosError(error)) {
+        toast.error(error.response?.data?.message || 'Something went wrong.');
       } else {
-        toast.error((error as Error).message || 'Something went wrong');
+        toast.error((error as Error).message || 'Unexpected error.');
       }
     } finally {
       setLoading(false);
@@ -74,7 +79,8 @@ const WriteArticle = () => {
 
         <div className='article-input'>
           <p>Article Topic</p>
-          <input className='article-write-input'
+          <input
+            className='article-write-input'
             type='text'
             placeholder='The future of AI'
             value={input}
@@ -126,4 +132,3 @@ const WriteArticle = () => {
 };
 
 export default WriteArticle;
-
