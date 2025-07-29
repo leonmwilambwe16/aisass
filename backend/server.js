@@ -1,29 +1,38 @@
 import express from "express";
-import cors from "cors"
-import dotenv from "dotenv"
-import {clerkMiddleware,requireAuth} from "@clerk/express"
+import cors from "cors";
+import dotenv from "dotenv";
+import { clerkMiddleware, requireAuth } from "@clerk/express";
 import aiRoute from "./route/aiRoute.js";
 import connectCloudinary from "./config/cloudinary.js";
 import userRouter from "./route/userRoute.js";
 
-dotenv.config()
+dotenv.config();
 
-const app = express()
-await connectCloudinary()
+const app = express();
 
-app.use(clerkMiddleware())
-app.use(cors())
-app.use(express.json())
+async function startServer() {
+  try {
+    await connectCloudinary();
 
+    app.use(clerkMiddleware());
+    app.use(cors());
+    app.use(express.json());
 
-app.get('/',(req,res)=>res.send('server is live !'))
-app.use(requireAuth())
+    app.get("/", (req, res) => res.send("server is live!"));
 
-app.use('/api/ai',aiRoute)
-app.use('/api/user',userRouter)
+    app.use(requireAuth());
 
-const PORT = process.env.PORT || 3000
+    app.use("/api/ai", aiRoute);
+    app.use("/api/user", userRouter);
 
-app.listen(PORT,()=>{
-  console.log("Server is running on port ",PORT)
-})
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+      console.log("Server is running on port", PORT);
+    });
+  } catch (err) {
+    console.error("Error starting server:", err);
+    process.exit(1);
+  }
+}
+
+startServer();
