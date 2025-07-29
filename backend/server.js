@@ -15,7 +15,11 @@ async function startServer() {
     await connectCloudinary();
 
     app.use(clerkMiddleware());
-    app.use(cors());
+    app.use(cors({
+    origin: 'https://aichampexperience.onrender.com',
+    methods: ['GET', 'POST'],
+    credentials: true,
+  }));
     app.use(express.json());
 
     app.get("/", (req, res) => res.send("server is live!"));
